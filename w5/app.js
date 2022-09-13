@@ -5,114 +5,88 @@ const showOnPage = function (text) {
 	let outputDiv = document.getElementById('output');
 	outputDiv.append(newParagraph);
 };
-
+let monday = true;
+let tuesday = false;
 //const decisionDaily = [1400, 5, true, 'test'];
-const daily = [
-    monday = {
+const daily = [{
+		day: monday,
         time: 1400, 
         number: 5, 
         updates: true, 
-        message: 'test'},
-    tuesday = {
+        message: 'test'
+	},{
+     
+		day: tuesday,
         time: 1400, 
         number: 5, 
         updates: true, 
-        message: 'test'},
-];
+        message: 'test'
+	
+}];
 
-const processDaily = function (obj) {
-	let isAppropriate = function (time, number, updates, message) {
+
+	let isAppropriate = function (obj) {
 		if (
-			this.time >= 1200 &&
-			this.time <= 1600 &&
-			this.number < 3 &&
-			this.updates
+			obj.time >= 1200 &&
+			obj.time <= 1600 &&
+			obj.number < 3 &&
+			obj.updates
 		) {
-			this.message =
+			obj.message =
 				'<h1>It is a perfect time and situation to call mom!</h1><p>Call her now!';
-			return this.message;
+			return obj.message;
 		} else if (
-			this.time >= 0600 &&
-			this.time <= 1159 &&
-			this.number < 3 &&
-			this.updates
+			obj.time >= 0600 &&
+			obj.time <= 1159 &&
+			obj.number < 3 &&
+			obj.updates
 		) {
-			this.message =
+			obj.message =
 				'<h1>It is not the best time to call, but if its important</h1><p>Try to reach her';
-			return this.message;
+			return obj.message;
 		} else {
-			this.message =
+			obj.message =
 				'<h1>It is not a good time or situation to call mom</h1><p>Try again tomorrow';
-			return this.message;
+			return obj.message;
 		}
-        
+        //return isAppropriate
 	}
-    return isAppropriate
-};
+    
+ const processDaily =  function(obj) {
+ 	daily.forEach(element => {
+ 		isAppropriate(obj.day)
+ 		isAppropriate(obj.time)
+ 		isAppropriate(obj.number)
+ 		isAppropriate(obj.updates)
+ 		isAppropriate(obj.message)
+ 	}); 
+ }
 
-const loopOverDaily = function () {
+const loopOverDaily = function (test) {
     daily.forEach(function (obj) {
         processDaily(obj);
     });
+	//return daily
 };
+const test = [{
+	time: 1400,
+	number: 5,
+	updates: true,
+	message: 'testing'
+}];
 
-loopOverDaily();
+loopOverDaily(daily);
+showOnPage(test);
 
-// let decision = {
-// 	time: 1400,
-// 	number: 5,
-// 	updates: true,
-// 	message: 'test',
 
-// 	isAppropriate: function (_time, _number, _updates) {
-// 		if (
-// 			this.time >= 1200 &&
-// 			this.time <= 1600 &&
-// 			this.number < 3 &&
-// 			this.updates
-// 		) {
-// 			this.message =
-// 				'<h1>It is a perfect time and situation to call mom!</h1><p>Call her now!';
-// 			return this.message;
-// 		} else if (
-// 			this.time >= 0600 &&
-// 			this.time <= 1159 &&
-// 			this.number < 3 &&
-// 			this.updates
-// 		) {
-// 			this.message =
-// 				'<h1>It is not the best time to call, but if its important</h1><p>Try to reach her';
-// 			return this.message;
-// 		} else {
-// 			this.message =
-// 				'<h1>It is not a good time or situation to call mom</h1><p>Try again tomorrow';
-// 			return this.message;
-// 		}
-// 	},
-// };
-
-// const changeText = function (first, second, third) {
-//     let result1 = parseFloat(document.getElementById("first").value)
-//     let result2 = parseFloat(document.getElementById("second").value)
-//     let result3 = document.getElementById("third").value
-//     decision.isAppropriate(result1, result2, result3)
-//     decision.time = result1
-//     decision.number = result2
-//     decision.updates = result3
-
-// }
-
-// const clearText = function () {
-//     document.getElementById("first").value=""
-//     document.getElementById("second").value=""
-//     document.getElementById("third").value=""
-
-// }
-
-//decision.isAppropriate(decision.time, decision.number, decision.updates);
+//isAppropriate(test);
 showOnPage(
-	//`<h1>List of variables that influence method</h1><p>time (time of day) = ${decision.time}<p>number (number of times I've already called this week) = ${decision.number}<p>updates (if I have major important updates) = ${decision.updates}<p><----------------------------><p>${decision.message}`
+	`<h1>List of variables that influence method</h1><p>
+	time (time of day) = ${daily.time}<p>
+	number (number of times I've already called this week) = ${daily.number}<p>
+	updates (if I have major important updates) = ${daily.updates}
+	<p><----------------------------><p>
+	${daily.message}`
         
     );
-
-showOnPage();
+//showOnPage();
