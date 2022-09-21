@@ -55,7 +55,7 @@ const loopOverDaily = function (test) {
 	//return daily
 };
 const test = {
-	day: 'monday',
+	day: 'Tuesday',
 	time: 1400,
 	number: 2,
 	updates: true,
@@ -72,8 +72,6 @@ const pBold = document.createElement('div.bold');
 //const bold = document.querySelector('.bold');
 loopOverDaily(isAppropriate(test));
 //pDay.textContent = pBold + pDay;
-
-
 
 pDay.textContent = `
 
@@ -95,16 +93,26 @@ Updates --> Do I have any important updates to tell her? --> ${test.updates}
 
 //const summary = document.createElement('h3').appendChild(pDay).appendChild(pTime).appendChild(pNumber).appendChild(pUpdates);
 
-document.querySelector('body').appendChild(summaryTitle);
-document.querySelector('body').appendChild(pDay);
-document.querySelector('body').appendChild(pTime);
-document.querySelector('body').appendChild(pNumber);
-document.querySelector('body').appendChild(pUpdates);
 
 
-
-
-
-document.querySelector('.button').addEventListener('click', function (e) {
-	e.target.textContent = 'the button was clicked';
+const form = document.querySelector('#day-input').addEventListener('form', function (e) {
+	e.forEach(function (e) {
+		test.day = e.day;
+		test.time = e.time;
+		test.number = e.number;
+		test.updates = e.updates;
+	})
+	return e;
 });
+
+document
+	.querySelector('#submit-button')
+	.addEventListener('click', function (e) {
+		e.target.textContent = 'the button was clicked';
+		form;
+		document.querySelector('body').appendChild(summaryTitle);
+		document.querySelector('body').appendChild(pDay);
+		document.querySelector('body').appendChild(pTime);
+		document.querySelector('body').appendChild(pNumber);
+		document.querySelector('body').appendChild(pUpdates);
+	});
