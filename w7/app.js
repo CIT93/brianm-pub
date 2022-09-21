@@ -91,28 +91,21 @@ pUpdates.textContent = `
 Updates --> Do I have any important updates to tell her? --> ${test.updates}
 `;
 
-//const summary = document.createElement('h3').appendChild(pDay).appendChild(pTime).appendChild(pNumber).appendChild(pUpdates);
-
-
-
-const form = document.querySelector('#day-input').addEventListener('form', function (e) {
-	e.forEach(function (e) {
-		test.day = e.day;
-		test.time = e.time;
-		test.number = e.number;
-		test.updates = e.updates;
-	})
-	return e;
-});
-
+//when clicking #submit-button, drop in "the button was clicked" on button text and then append data from above to the body
 document
 	.querySelector('#submit-button')
 	.addEventListener('click', function (e) {
 		e.target.textContent = 'the button was clicked';
-		form;
+
 		document.querySelector('body').appendChild(summaryTitle);
 		document.querySelector('body').appendChild(pDay);
 		document.querySelector('body').appendChild(pTime);
 		document.querySelector('body').appendChild(pNumber);
 		document.querySelector('body').appendChild(pUpdates);
 	});
+
+//tried quite a few things with this but gave up after backtracking a lot; trying to get the form to set "const test" data
+//when submit button is clicked, need a code walk through with this to wrap my head around some concepts with it.
+function submit(event) {
+	test.day = `${event.day}`;
+}
