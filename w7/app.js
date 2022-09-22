@@ -17,12 +17,7 @@ const daily = [
 ];
 
 const isAppropriate = function (obj) {
-	if (
-		obj.time >= 1200 && 
-		obj.time <= 1600 && 
-		obj.number < 3 && 
-		obj.updates
-	) {
+	if (obj.time >= 1200 && obj.time <= 1600 && obj.number < 3 && obj.updates) {
 		obj.message =
 			'<h1>It is a perfect time and situation to call mom!</h1><p>Call her now!';
 		return obj.message;
@@ -65,65 +60,62 @@ let data = {
 	message: 'testing',
 };
 
-const pDay = document.createElement('p');
-const pTime = document.createElement('p');
-const pNumber = document.createElement('p');
-const pUpdates = document.createElement('p');
-let dDay = 'monday';
-let dTime = 1600;
-let dNumber = 5;
-let dUpdates = true;
-let dMessage = 'tester';
-
-
-
-/////////////////////////////////////////////////////////////////////////
-////////////////     need help here     /////////////////////////////////
-function submit(event) {
-	dDay.textContent = `${event.day}`;
-	dTime.textContent = `${event.time}`;
-	dNumber = `${event.number}`;
-	dUpdates = `${event.updates}`;
-	event.preventDefault();
-}
-const form = document.getElementById('form');
-form.addEventListener('submit', submit);
-/////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
 
 
 loopOverDaily(isAppropriate(data));
 
-pDay.textContent = `
-
-Day --> The day of the week. --><h3> ${data.day}</h3>
-
-`;
-
-pTime.textContent = `
-Time (time of day in military time, ex. 0000-1159) --> ${data.time}
-
-`;
-pNumber.textContent = `
-Number --> Number of times I've already called this week. --> ${data.number}
-
-`;
-pUpdates.textContent = `
-Updates --> Do I have any important updates to tell her? --> ${data.updates}
-`;
-
 //when clicking #submit-button, drop in "the button was clicked" on button text and then append data from above to the body
-document
-	.querySelector('#submit-button')
-	.addEventListener('click', function (e) {
+document.querySelector('#submit-button').addEventListener(
+	'click',
+	function (e) {
 		e.target.textContent = 'The form was submitted successfully!';
+		const pDay = document.createElement('h4');
+		const pDayFormValue = document.getElementById('day-input').value;
+		pDay.innerHTML =
+			'Day --> The day of the week --><h4>' + pDayFormValue + '</h4>';
+
+		const pTime = document.createElement('h4');
+		const pTimeFormValue = document.getElementById('time-military').value;
+		pTime.innerHTML =
+			'Time --> Military Standard Time (ex. 1400) --><h4>' +
+			pTimeFormValue +
+			'</h4>';
+
+		const pNumber = document.createElement('h4');
+		const pNumberFormValue = document.getElementById('number-of-times').value;
+		pNumber.innerHTML =
+			'Number --> The number of times called this week --><h4>' +
+			pNumberFormValue +
+			'</h4>';
+
+		const pUpdates = document.createElement('h4');
+		const pUpdatesFormValue = document.getElementById('updates').value;
+		pUpdates.innerHTML =
+			'Updates --> Any pertinent updates? --><h4>' +
+			pUpdatesFormValue +
+			'</h4>';
 
 		document.querySelector('body').appendChild(summaryTitle);
 		document.querySelector('body').appendChild(pDay);
 		document.querySelector('body').appendChild(pTime);
 		document.querySelector('body').appendChild(pNumber);
 		document.querySelector('body').appendChild(pUpdates);
-	});
+
+		data.day.valueOf = pDay.value;
+		data.time.valueOf = pTime.value;
+		data.number.valueOf = pNumber.value;
+		data.updates.valueOf = pUpdates.value;
+	},
+	{ once: true }
+);
+
+const decisionOutput = document.createElement('h2');
+decisionOutput.textContent = 'Based on your input, here is the decision';
+document.querySelector('body').appendChild(decisionOutput);
+
+const decisionData = document.createElement('h5');
+decisionData.innerHTML = `${data.message}`;
+document.querySelector('body').appendChild(decisionData);
 
 //create the title for summary
 const summaryTitle = document.createElement('h1');
