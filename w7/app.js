@@ -96,7 +96,7 @@ loopOverDaily(isAppropriate(data));
 
 pDay.textContent = `
 
-Day --> The day of the week. --> ${data.day}
+Day --> The day of the week. --><h3> ${data.day}</h3>
 
 `;
 
