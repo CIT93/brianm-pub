@@ -16,8 +16,13 @@ const daily = [
 	},
 ];
 
-let isAppropriate = function (obj) {
-	if (obj.time >= 1200 && obj.time <= 1600 && obj.number < 3 && obj.updates) {
+const isAppropriate = function (obj) {
+	if (
+		obj.time >= 1200 && 
+		obj.time <= 1600 && 
+		obj.number < 3 && 
+		obj.updates
+	) {
 		obj.message =
 			'<h1>It is a perfect time and situation to call mom!</h1><p>Call her now!';
 		return obj.message;
@@ -35,11 +40,10 @@ let isAppropriate = function (obj) {
 			'<h1>It is not a good time or situation to call mom</h1><p>Try again tomorrow';
 		return obj.message;
 	}
-	//return isAppropriate
 };
 
 const processDaily = function (obj) {
-	daily.forEach((element) => {
+	daily.forEach(function () {
 		isAppropriate(obj.day);
 		isAppropriate(obj.time);
 		isAppropriate(obj.number);
@@ -48,13 +52,12 @@ const processDaily = function (obj) {
 	});
 };
 
-const loopOverDaily = function (test) {
+const loopOverDaily = function () {
 	daily.forEach(function (obj) {
 		processDaily(obj);
 	});
-	//return daily
 };
-const test = {
+const data = {
 	day: 'Tuesday',
 	time: 1400,
 	number: 2,
@@ -62,33 +65,27 @@ const test = {
 	message: 'testing',
 };
 
-const summaryTitle = document.createElement('h1');
-summaryTitle.textContent = `List of variables that influence method:`;
 const pDay = document.createElement('p');
 const pTime = document.createElement('p');
 const pNumber = document.createElement('p');
 const pUpdates = document.createElement('p');
-const pBold = document.createElement('div.bold');
-//const bold = document.querySelector('.bold');
-loopOverDaily(isAppropriate(test));
-//pDay.textContent = pBold + pDay;
-
+loopOverDaily(isAppropriate(data));
 pDay.textContent = `
 
-Day --> The day of the week. --> ${test.day}
+Day --> The day of the week. --> ${data.day}
 
 `;
 
 pTime.textContent = `
-Time (time of day in military time, ex. 0000-1159) --> ${test.time}
+Time (time of day in military time, ex. 0000-1159) --> ${data.time}
 
 `;
 pNumber.textContent = `
-Number --> Number of times I've already called this week. --> ${test.number}
+Number --> Number of times I've already called this week. --> ${data.number}
 
 `;
 pUpdates.textContent = `
-Updates --> Do I have any important updates to tell her? --> ${test.updates}
+Updates --> Do I have any important updates to tell her? --> ${data.updates}
 `;
 
 //when clicking #submit-button, drop in "the button was clicked" on button text and then append data from above to the body
@@ -104,8 +101,13 @@ document
 		document.querySelector('body').appendChild(pUpdates);
 	});
 
+//create the title for summary
+const summaryTitle = document.createElement('h1');
+summaryTitle.textContent = `List of variables that influence method:`;
+document.querySelector('body').appendChild(summaryTitle);
+
 //tried quite a few things with this but gave up after backtracking a lot; trying to get the form to set "const test" data
 //when submit button is clicked, need a code walk through with this to wrap my head around some concepts with it.
 function submit(event) {
-	test.day = `${event.day}`;
+	data.day = `${event.day}`;
 }
