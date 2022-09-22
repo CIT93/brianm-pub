@@ -57,7 +57,7 @@ const loopOverDaily = function () {
 		processDaily(obj);
 	});
 };
-const data = {
+let data = {
 	day: 'Tuesday',
 	time: 1400,
 	number: 2,
@@ -69,7 +69,31 @@ const pDay = document.createElement('p');
 const pTime = document.createElement('p');
 const pNumber = document.createElement('p');
 const pUpdates = document.createElement('p');
+let dDay = 'monday';
+let dTime = 1600;
+let dNumber = 5;
+let dUpdates = true;
+let dMessage = 'tester';
+
+
+
+/////////////////////////////////////////////////////////////////////////
+////////////////     need help here     /////////////////////////////////
+function submit(event) {
+	dDay.textContent = `${event.day}`;
+	dTime.textContent = `${event.time}`;
+	dNumber = `${event.number}`;
+	dUpdates = `${event.updates}`;
+	event.preventDefault();
+}
+const form = document.getElementById('form');
+form.addEventListener('submit', submit);
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+
 loopOverDaily(isAppropriate(data));
+
 pDay.textContent = `
 
 Day --> The day of the week. --> ${data.day}
@@ -92,7 +116,7 @@ Updates --> Do I have any important updates to tell her? --> ${data.updates}
 document
 	.querySelector('#submit-button')
 	.addEventListener('click', function (e) {
-		e.target.textContent = 'the button was clicked';
+		e.target.textContent = 'The form was submitted successfully!';
 
 		document.querySelector('body').appendChild(summaryTitle);
 		document.querySelector('body').appendChild(pDay);
@@ -108,6 +132,3 @@ document.querySelector('body').appendChild(summaryTitle);
 
 //tried quite a few things with this but gave up after backtracking a lot; trying to get the form to set "const test" data
 //when submit button is clicked, need a code walk through with this to wrap my head around some concepts with it.
-function submit(event) {
-	data.day = `${event.day}`;
-}
