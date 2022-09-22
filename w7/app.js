@@ -129,6 +129,3 @@ document
 const summaryTitle = document.createElement('h1');
 summaryTitle.textContent = `List of variables that influence method:`;
 document.querySelector('body').appendChild(summaryTitle);
-
-//tried quite a few things with this but gave up after backtracking a lot; trying to get the form to set "const test" data
-//when submit button is clicked, need a code walk through with this to wrap my head around some concepts with it.
