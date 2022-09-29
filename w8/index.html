@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    
+    <div id="header"></div>
+    
+        
+    
+
+    
+    
+    <form id="user-input-form">
+        <label>Choose which day:</label>
+        <select name="day" id="day-input">
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+            <option value="saturday">Saturday</option>
+            <option value="sunday">Sunday</option>
+        </select>
+        <br />
+        
+        
+        <input id="time-military" type="textbox" required>: Time in Military Standard (ex. 0000-1159)<br />
+        <input id="number-of-times" type="textbox" required>: Number of Times I already Called<br />
+        <label>
+        <input id="updates" type="checkbox"> Do I have updates?<br />
+        </label>
+        <button id="submit-button" class="button">Submit</button>
+        <button id="clear">Clear</button>
+    </form>
+    <div id="output"></div>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
