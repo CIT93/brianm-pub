@@ -59,15 +59,17 @@ p {
 	padding: 0 1em 1em;
 }
 p:first-line {
-	text-shadow: 5px 1px 3px rgba(100, 100, 100, 0.3);
+	text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
 	font-weight: bold;
 }
 p:first-letter {
 	color: black;
 	font-family: 'Times New Roman', Times, serif;
 	font-size: 3em;
-	float: left;
-	line-height: 0.9em;
+	/* box-shadow: 10px 5px 6px rgb(100, 100, 100); */
+	text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+	/* float: left; */
+	line-height: 0.95em;
 }
 a:link {
 	color: black;
