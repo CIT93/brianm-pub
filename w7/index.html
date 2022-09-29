@@ -4,24 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To Call or Not to Call?</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
     <div id="output"></div>
-    <script type="text/javascript" src="app.js">
         
-    </script>
 
     
     
-    
-        <input id="day-input" type="textbox">: Day</form><br />
-        <input id="time-military" type="textbox">: Time in Military Standard (ex. 0000-1159)</form><br />
-        <input id="number-of-times" type="textbox">: Number of Times I already Called</form><br />
-        <input id="updates" type="radio">: Do I have updates?</form><br />
-        <button id="submit-button" class="button">Submit</button>
-    
+    <form id="form" class="form">
+        <input id="day-input" class="day" type="textbox">: Day</form><br />
+        <input id="time-military" class="time" type="textbox">: Time in Military Standard (ex. 0000-1159)</form><br />
+        <input id="number-of-times" class="number" type="textbox">: Number of Times I already Called</form><br />
+        <input id="updates" class="updates" type="radio" value="false">: Do I have updates?</form><br />
+        <button type="submit" id="submit-button" class="button">Submit Form</button>
+    </form>
      
+    <script type="text/javascript" src="app.js"></script>
 </body>
 </html>

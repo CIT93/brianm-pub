@@ -16,7 +16,7 @@ const daily = [
 	},
 ];
 
-let isAppropriate = function (obj) {
+const isAppropriate = function (obj) {
 	if (obj.time >= 1200 && obj.time <= 1600 && obj.number < 3 && obj.updates) {
 		obj.message =
 			'<h1>It is a perfect time and situation to call mom!</h1><p>Call her now!';
@@ -35,11 +35,10 @@ let isAppropriate = function (obj) {
 			'<h1>It is not a good time or situation to call mom</h1><p>Try again tomorrow';
 		return obj.message;
 	}
-	//return isAppropriate
 };
 
 const processDaily = function (obj) {
-	daily.forEach((element) => {
+	daily.forEach(function () {
 		isAppropriate(obj.day);
 		isAppropriate(obj.time);
 		isAppropriate(obj.number);
@@ -48,63 +47,77 @@ const processDaily = function (obj) {
 	});
 };
 
-const loopOverDaily = function (test) {
+const loopOverDaily = function () {
 	daily.forEach(function (obj) {
 		processDaily(obj);
 	});
-	//return daily
 };
-const test = {
-	day: 'monday',
+let data = {
+	day: 'Tuesday',
 	time: 1400,
 	number: 2,
 	updates: true,
 	message: 'testing',
 };
 
+
+
+loopOverDaily(isAppropriate(data));
+
+//when clicking #submit-button, drop in "the button was clicked" on button text and then append data from above to the body
+document.querySelector('#submit-button').addEventListener(
+	'click',
+	function (e) {
+		e.target.textContent = 'The form was submitted successfully!';
+		const pDay = document.createElement('h4');
+		const pDayFormValue = document.getElementById('day-input').value;
+		pDay.innerHTML =
+			'Day --> The day of the week --><h4>' + pDayFormValue + '</h4>';
+
+		const pTime = document.createElement('h4');
+		const pTimeFormValue = document.getElementById('time-military').value;
+		pTime.innerHTML =
+			'Time --> Military Standard Time (ex. 1400) --><h4>' +
+			pTimeFormValue +
+			'</h4>';
+
+		const pNumber = document.createElement('h4');
+		const pNumberFormValue = document.getElementById('number-of-times').value;
+		pNumber.innerHTML =
+			'Number --> The number of times called this week --><h4>' +
+			pNumberFormValue +
+			'</h4>';
+
+		const pUpdates = document.createElement('h4');
+		const pUpdatesFormValue = document.getElementById('updates').value;
+		pUpdates.innerHTML =
+			'Updates --> Any pertinent updates? --><h4>' +
+			pUpdatesFormValue +
+			'</h4>';
+
+		document.querySelector('body').appendChild(summaryTitle);
+		document.querySelector('body').appendChild(pDay);
+		document.querySelector('body').appendChild(pTime);
+		document.querySelector('body').appendChild(pNumber);
+		document.querySelector('body').appendChild(pUpdates);
+
+		data.day.valueOf = pDay.value;
+		data.time.valueOf = pTime.value;
+		data.number.valueOf = pNumber.value;
+		data.updates.valueOf = pUpdates.value;
+	},
+	{ once: true }
+);
+
+const decisionOutput = document.createElement('h2');
+decisionOutput.textContent = 'Based on your input, here is the decision';
+document.querySelector('body').appendChild(decisionOutput);
+
+const decisionData = document.createElement('h5');
+decisionData.innerHTML = `${data.message}`;
+document.querySelector('body').appendChild(decisionData);
+
+//create the title for summary
 const summaryTitle = document.createElement('h1');
 summaryTitle.textContent = `List of variables that influence method:`;
-const pDay = document.createElement('p');
-const pTime = document.createElement('p');
-const pNumber = document.createElement('p');
-const pUpdates = document.createElement('p');
-const pBold = document.createElement('div.bold');
-//const bold = document.querySelector('.bold');
-loopOverDaily(isAppropriate(test));
-//pDay.textContent = pBold + pDay;
-
-
-
-pDay.textContent = `
-
-Day --> The day of the week. --> ${test.day}
-
-`;
-
-pTime.textContent = `
-Time (time of day in military time, ex. 0000-1159) --> ${test.time}
-
-`;
-pNumber.textContent = `
-Number --> Number of times I've already called this week. --> ${test.number}
-
-`;
-pUpdates.textContent = `
-Updates --> Do I have any important updates to tell her? --> ${test.updates}
-`;
-
-//const summary = document.createElement('h3').appendChild(pDay).appendChild(pTime).appendChild(pNumber).appendChild(pUpdates);
-
 document.querySelector('body').appendChild(summaryTitle);
-document.querySelector('body').appendChild(pDay);
-document.querySelector('body').appendChild(pTime);
-document.querySelector('body').appendChild(pNumber);
-document.querySelector('body').appendChild(pUpdates);
-
-
-
-
-
-document.querySelector('.button').addEventListener('click', function (e) {
-	e.target.textContent = 'the button was clicked';
-});
