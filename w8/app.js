@@ -1,6 +1,6 @@
-const daily = [{}];
+let daily = [{}];
 
-const filters = {};
+let filters = {};
 
 const summaryTitle = document.createElement('h1');
 summaryTitle.textContent = 'Should You Call Your Mom?';
