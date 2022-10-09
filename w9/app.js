@@ -1,10 +1,10 @@
 const daily = getSavedDaily();
 
- const filters = {
- 	searchText: '',
-	 hideCompleted: false,
- };
-renderDaily(daily, filters);
+
+
+renderDaily(daily);
+
+
 
 const summaryTitle = document.createElement('h1');
 summaryTitle.textContent = 'Should You Call Your Mom?';
@@ -14,21 +14,20 @@ document
 	.querySelector('#user-input-form')
 	.addEventListener('submit', function (e) {
 		e.preventDefault();
-		
-		daily.push({
+		let dailyPushable = {
 			id: uuidv4(),
 			day: e.target.elements.day.value,
 			time: e.target.elements.time.value,
 			number: e.target.elements.number.value,
 			updates: e.target.elements.updates.checked,
-			removable: false,
-			message: logicCalc(daily),
-		});
-		//logic(e);
-		//logicCalc(daily);
-
+			//message: logicCalc(daily),
+			message: ''
+		}
+		logicCalc(dailyPushable);
+		daily.push(dailyPushable);
+		
 		saveDaily(daily);
-		renderDaily(daily, filters);
+		renderDaily(daily);
 		
 		generateDailyDOM(daily);
 	});
