@@ -54,8 +54,6 @@ const generateDailyDOM = function (daily) {
 	dailyRem.textContent = 'x';
 	dailyRem.addEventListener('click', function () {
 		removeDaily(daily.id);
-		saveDaily(daily);
-		renderDaily(daily);
 	});
 
 	//setup the daily text
@@ -70,7 +68,7 @@ const generateDailyDOM = function (daily) {
 
 //updates the render
 const renderDaily = function (daily) {
-	 const filteredDaily = getSavedDaily(daily).filter(function (daily) {
+	 const filteredDaily = daily.filter(function (daily) {
 	 	if (daily.length >= 0) {
             return console.error();
         } else {
