@@ -18,7 +18,6 @@ document
 			time: e.target.elements.time.value,
 			number: e.target.elements.number.value,
 			updates: e.target.elements.updates.checked,
-			//message: logicCalc(daily),
 			message: '',
 		};
 
