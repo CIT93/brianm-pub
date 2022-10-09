@@ -16,16 +16,19 @@ const saveDaily = function (daily) {
 //logic calculations
 const logicCalc = function (dailyPushable) {
 	//sets daily.message
-	if (dailyPushable.time >= 1200 && dailyPushable.time <= 1600 && dailyPushable.number < 3 && dailyPushable.updates) {
+	if (dailyPushable.time >= 1200 && dailyPushable.time <= 1600 && dailyPushable.number < 3 && dailyPushable.number >= 0) {
         return dailyPushable.message =
 			'<h1>It is a perfect time and situation to call mom!</h1><h2><p>Call her now!</h2>';
-	} else if (dailyPushable.time >= 1200 && dailyPushable.time <= 1600 && dailyPushable.number < 5 && dailyPushable.updates) {
+	} else if (dailyPushable.time >= 1200 && dailyPushable.time <= 1600 && dailyPushable.number < 4 && dailyPushable.number >= 0) {
         return dailyPushable.message =
 			'<h1>It is not the best time to call mom</h1><p><h2>See if it can wait.</h2>';
+	} else if (dailyPushable.updates) {
+        return dailyPushable.message =
+			'<h1>Since you have important updates.</h1><h2>Keep it quick!</h2>';
 	} else {
         return dailyPushable.message =
-			'<h1>Do not call your mom, its not a good situation.</h1><h2>Try again another day.</h2>';
-	}
+        '<h1>Do not call your mom, its not a good situation.</h1><h2>Try again another day.</h2>';
+    }
 };
 
 //handles finding index of the element to be removed then saves and rerenders local storage

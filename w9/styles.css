@@ -107,3 +107,8 @@ nav.sitenavigation a:focus {
 	background-color: black;
 	color: ivory;
 }
+.error {
+	color: red;
+	background-color: #000;
+	text-align: center;
+}
