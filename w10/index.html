@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="text/javascript" src="../uuidv4.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js"
+        integrity="sha512-42PE0rd+wZ2hNXftlM78BSehIGzezNeQuzihiBCvUEB3CVxHvsShF86wBWwQORNxNINlBPuq7rG4WWhNiTVHFg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    <script type="text/javascript" src="functions.js" defer></script>
+    <script type="text/javascript" src="app.js" defer></script>
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <form id="user-input-form">
+        <label>Choose which day:</label>
+        <select name="day" id="day-input">
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+            <option value="saturday">Saturday</option>
+            <option value="sunday">Sunday</option>
+        </select>
+        <br />
+
+
+        <input id="time-military" type="textbox" name="time">: Time in Military Standard (ex. 0000-1159)<br />
+        <input id="number-of-times" type="textbox" name="number">: Number of Times I already Called<br />
+        <label>
+            <input id="updates" type="checkbox" name="updates"> Do I have updates?<br />
+        </label>
+        <button id="submit-button" class="button">Submit</button>
+    </form>
+    <div id="blank-time" class="error"></div>
+    <div id="blank-number" class="error"></div>
+    <div id="output"></div>
+
+</body>
+
+</html>

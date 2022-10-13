@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js"
+    integrity="sha512-42PE0rd+wZ2hNXftlM78BSehIGzezNeQuzihiBCvUEB3CVxHvsShF86wBWwQORNxNINlBPuq7rG4WWhNiTVHFg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    <script type="text/javascript" src="functions.js" defer></script>
+    <script type="text/javascript" src="edit.js" defer></script>
+</head>
+
+<body>
+    <a href="index.html">Home</a>
+    <h1 id="title"></h1>
+    
+    <h2 id="body"></h2>
+    <span id="rate"></span>
+    <span id="update"></span>
+    <button id="remove">Remove Entry</button>
+    
+    <p />
+    <h2>
+        <form id="rate-form">
+            <label id="rating">Please rate this phone call:</label>
+            <select name="rate">
+                <option value="excellent">Excellent</option>
+                <option value="good">Good</option>
+                <option value="meh">Meh</option>
+                <option value="bad">Bad</option>
+            </select>
+            <button id="rate-submit">Submit Rating</button>
+        </form>
+    </h2>
+    <div id="output"></div>
+</body>
+
+</html>
