@@ -24,7 +24,7 @@ document
 			message: '',
 			createdAt: timestamp,
 			updatedAt: timestamp,
-			rating: ''
+			rating: '',
 		};
 
 		//validation
@@ -52,9 +52,9 @@ document
 		}
 	});
 
-// window.addEventListener('storage', function (e) {
-// 	if (e.key === 'daily') {
-// 		daily = JSON.parse(e.newValue);
-// 		renderDaily(daily);
-// 	}
-// });
+window.addEventListener('storage', function (e) {
+	if (e.key === 'daily') {
+		daily = JSON.parse(e.newValue);
+		renderDaily(daily);
+	}
+});

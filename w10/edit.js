@@ -14,15 +14,30 @@ let dailys = daily.find(function (dailys) {
 if (dailys === undefined) {
 	location.assign('index.html');
 }
-let ratingIndex = function (dailyId) {
-	return daily['length']
+let ratingIndex = function (dailys) {
+	let i = daily.findIndex(function (dailys) {
+		return dailys.id === dailyId;
+	})
+	return i
 }
+		
 let rating = document.querySelector('#rate-form').addEventListener('submit', function (e) {
 	e.preventDefault();
+	const timestamp = moment().valueOf();
+	let rating = e.target.elements.rate.value;
 	const ratePush = {
-		rating: e.target.elements.rate.value
+			id: daily[ratingIndex(dailys)].id,
+			day: daily[ratingIndex(dailys)].day,
+			time: daily[ratingIndex(dailys)].time,
+			number: daily[ratingIndex(dailys)].number,
+			updates: daily[ratingIndex(dailys)].updates,
+			message: daily[ratingIndex(dailys)].message,
+			createdAt: timestamp,
+			updatedAt: timestamp,
+			rating: rating
 	};
-	daily.splice(daily[ratingIndex(dailyId)], 1, ratePush);
+	daily.splice(ratingIndex(dailys), 1, ratePush);
+	
 	saveDaily(daily);
 	location.assign('index.html');
 }) 
@@ -63,4 +78,3 @@ const generateUpdateDOM = function (updateElement) {
 
 	return updateEl;
 };
-
