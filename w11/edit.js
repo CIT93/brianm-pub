@@ -1,3 +1,4 @@
+generateEditPageDOM();
 const titleElement = document.querySelector('#title');
 const bodyElement = document.querySelector('#body');
 const rateElement = document.querySelector('#rate');
@@ -5,6 +6,7 @@ const updateElement = document.querySelector('#update');
 const removeElement = document.querySelector('#remove');
 const dailyId = location.hash.substring(1);
 let daily = getSavedDaily();
+
 let dailys = daily.find((dailys) => dailys.id === dailyId);
 
 //if dailys id not found, kickback to index, otherwise print daily found to console
@@ -15,7 +17,6 @@ let ratingIndex = (dailys) => {
 	let i = daily.findIndex((dailys) => dailys.id === dailyId);
 	return i;
 };
-
 //rating logic
 let rating = document
 	.querySelector('#rate-form')
@@ -39,7 +40,6 @@ let rating = document
 		saveDaily(daily);
 		location.assign('index.html');
 	});
-
 //set pages title up
 titleElement.innerHTML = `Daily ID: <br />${daily[ratingIndex(dailys)].id}`;
 
@@ -75,3 +75,5 @@ const generateUpdateDOM = (updateElement) => {
 	updateEl.textContent = daily.updatedAt;
 	return updateEl;
 };
+
+

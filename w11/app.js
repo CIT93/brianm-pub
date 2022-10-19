@@ -1,12 +1,11 @@
 let daily = getSavedDaily();
-
+generateMainDOM();
 renderDaily(daily);
 
-const summaryTitle = document.createElement('h1');
-summaryTitle.textContent = 'Should You Call Your Mom?';
-document.querySelector('#header').appendChild(summaryTitle);
 
-generateMainDOM();
+
+
+
 document.querySelector('#user-input-form').addEventListener('submit', (e) => {
 	e.preventDefault();
 	const id = uuidv4();
@@ -28,7 +27,10 @@ document.querySelector('#user-input-form').addEventListener('submit', (e) => {
 	};
 
 	//validation
-	if (time === '' || time < 0 || time == null || time == undefined) {
+	if (time === '' || 
+		time < 0 || 
+		time == null || 
+		time == undefined) {
 		const errorMessageTime = document.createElement('div');
 		errorMessageTime.textContent = 'Please enter a time!';
 		document.getElementById('blank-time').appendChild(errorMessageTime);
@@ -41,6 +43,15 @@ document.querySelector('#user-input-form').addEventListener('submit', (e) => {
 		const errorMessageNumber = document.createElement('div');
 		errorMessageNumber.textContent = 'Please enter a valid number of times!';
 		document.getElementById('blank-number').appendChild(errorMessageNumber);
+	} else if (
+		days === '' ||
+		days === null ||
+		days === undefined
+	) {
+		const errorMessageDay = document.createElement('div');
+		errorMessageDay.textContent = 'Please enter a valid Date!';
+		document.getElementById('blank-day').appendChild(errorMessageDay);
+
 	} else {
 		//calculate logic for message return based on above object
 		logicCalc(dailyPushable);

@@ -107,7 +107,12 @@ const generateLastEdited = (timestamp) => {
 
 let generateMainDOM = () => {
 	const mainDiv = document.createElement('div');
-	const lineBreak = document.createElement('br');
+	mainDiv.setAttribute('id', 'header')
+
+	const lineBreak1 = document.createElement('br');
+	const lineBreak2 = document.createElement('br');
+	const lineBreak3 = document.createElement('br');
+	const lineBreak4 = document.createElement('br');
 	const mainForm = document.createElement('form');
 	mainForm.setAttribute('id', 'user-input-form');
 
@@ -118,33 +123,161 @@ let generateMainDOM = () => {
 	days.setAttribute('type', 'date');
 	days.setAttribute('name', 'day');
 	days.setAttribute('id', 'day-input');
-	days.setAttribute('value', moment().toISOString(true))
+	//days.setAttribute('value', moment().toISOString(true))
+	//days.setAttribute('placeholder', moment().get('date'))
+	days.setAttribute('required', 'true')
 
 	const timeLabel = document.createElement('label');
 	timeLabel.textContent = 'Time in Military Standard'
-	const time = document.createElement('input'); //id="time-military" type="time" name="time"
+	const time = document.createElement('input'); 
 	time.setAttribute('id', 'time-military');
 	time.setAttribute('type', 'time');
 	time.setAttribute('name', 'time');
-	time.setAttribute('value', moment().toISOString(true))
+	//time.setAttribute('value', moment().toISOString(true))
+	//time.setAttribute('placeholder', moment().get('hours'))
+	time.setAttribute('required', 'true')
 
-	const number = document.createElement(''); //"number-of-times" type="textbox" name="number" value="0"
+	const number = document.createElement('input'); 
 	number.setAttribute('id', 'number-of-times');
-	number.setAttribute('type', );
-	number.setAttribute('');
-	number.setAttribute('');
+	number.setAttribute('type', 'number');
+	number.setAttribute('name', 'number');
+	number.setAttribute('value', 0);
+	number.setAttribute('required', 'true')
 
-	
-	
+	const updatesLabel = document.createElement('label');
+	updatesLabel.textContent = 'Do I have any pertinent updates to give?'
+	const updates = document.createElement('input'); 
+	updates.setAttribute('id', 'updates');
+	updates.setAttribute('type', 'checkbox');
+	updates.setAttribute('name', 'updates');
 
+	const submitButton = document.createElement('button'); 
+	submitButton.textContent = 'Submit';
+	submitButton.setAttribute('id', 'submit-button');
+	submitButton.setAttribute('class', 'button');
+
+	const summaryTitle = document.createElement('h1');
+	summaryTitle.textContent = 'Should You Call Your Mom?';
+
+	const blankTime = document.createElement('div');
+	blankTime.setAttribute('class', 'error');
+	blankTime.setAttribute('id', 'blank-time')
+
+	const blankNumber = document.createElement('div');
+	blankNumber.setAttribute('id', 'blank-number');
+	blankNumber.setAttribute('class', 'error')
+
+	const blankDay = document.createElement('div');
+	blankDay.setAttribute('class', 'error');
+	blankDay.setAttribute('id', 'blank-day')
+	
+	const output = document.createElement('div');
+	output.setAttribute('id', 'output')
+
+	//append mainDiv from above to the body section of the html page
 	document.querySelector('body').appendChild(mainDiv);
+	mainDiv.appendChild(summaryTitle)
 	mainDiv.appendChild(mainForm);
 	mainForm.appendChild(daysLabel);
 	daysLabel.appendChild(days);
-	mainForm.appendChild(lineBreak);
+	daysLabel.appendChild(lineBreak1);
 	mainForm.appendChild(timeLabel);
-	timeLabel.appendChild(time)
+	timeLabel.appendChild(time);
+	timeLabel.appendChild(lineBreak2);
+	mainForm.appendChild(number);
+	mainForm.appendChild(lineBreak3);
+	mainForm.appendChild(updatesLabel);
+	updatesLabel.appendChild(updates);
+	mainForm.appendChild(lineBreak4);
+	mainForm.appendChild(submitButton);
+	
+	mainDiv.appendChild(blankTime);
+	mainDiv.appendChild(blankNumber);
+	mainDiv.appendChild(output);
+
 
 
 	return mainDiv;
+};
+const generateEditPageDOM = () => {
+	const mainDiv = document.createElement('div');
+	const homeLink = document.createElement('a');
+	homeLink.setAttribute('href', 'index.html');
+	homeLink.textContent = '<< Go Back';
+
+	const dailyID = document.createElement('h1');
+	dailyID.setAttribute('id', 'title')
+
+	const editBody = document.createElement('h2');
+	editBody.setAttribute('id', 'body');
+
+	const rateSpan = document.createElement('span');
+	rateSpan.setAttribute('id', 'rate');
+
+	const updateSpan = document.createElement('span');
+	updateSpan.setAttribute('id', 'update');
+
+	const remButton = document.createElement('button');
+	remButton.setAttribute('id', 'remove');
+	remButton.textContent = 'Remove Entry';
+
+	const rateForm = document.createElement('form');
+	rateForm.setAttribute('id', 'rate-form');
+
+	const rateLabel = document.createElement('label');
+	rateLabel.setAttribute('id', 'rating');
+	rateLabel.textContent = 'Please rate this phone call:';
+
+	const rateSelect = document.createElement('select');
+	rateSelect.setAttribute('name', 'rate');
+
+	const opt1 = document.createElement('option');
+	opt1.setAttribute('value', 'excellent');
+	opt1.textContent = 'Excellent';
+
+	const opt2 = document.createElement('option');
+	opt2.setAttribute('value', 'good');
+	opt2.textContent = 'Good';
+
+	const opt3 = document.createElement('option');
+	opt3.setAttribute('value', 'meh');
+	opt3.textContent = 'Meh';
+
+	const opt4 = document.createElement('option');
+	opt4.setAttribute('value', 'bad');
+	opt4.textContent = 'Bad';
+
+	const rateSub = document.createElement('button');
+	rateSub.setAttribute('id', 'rate-submit');
+	rateSub.textContent = 'Submit Rating';
+	
+	const output = document.createElement('div');
+	output.setAttribute('id', 'output');
+	
+
+	document.querySelector('body').appendChild(mainDiv);
+	mainDiv.appendChild(homeLink);
+	mainDiv.appendChild(dailyID);
+	mainDiv.appendChild(editBody);
+	mainDiv.appendChild(rateSpan);
+	mainDiv.appendChild(updateSpan);
+	
+	mainDiv.appendChild(remButton);
+	mainDiv.appendChild(rateForm);
+	rateForm.appendChild(rateLabel);
+	rateForm.appendChild(rateSelect);
+
+	rateSelect.appendChild(opt1);
+	rateSelect.appendChild(opt2);
+	rateSelect.appendChild(opt3);
+	rateSelect.appendChild(opt4);
+
+	rateForm.appendChild(rateSub);
+
+	mainDiv.appendChild(output);
+
+
+
+
+	return mainDiv
 };
