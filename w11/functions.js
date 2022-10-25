@@ -5,8 +5,7 @@ const getSavedDaily = () => {
 };
 
 //saves to local storage
-const saveDaily = (daily) =>
-	localStorage.setItem('daily', JSON.stringify(daily));
+const saveDaily = (daily) => localStorage.setItem('daily', JSON.stringify(daily));
 
 //logic calculations
 const logicCalc = (dailyPushable) => {
