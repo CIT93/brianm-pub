@@ -18,7 +18,7 @@ const orderDOM = () => {
         let person = order.person
 		const output = document.getElementById('output');
 		let total = document.getElementById('total');
-		output.innerHTML += `${person} placed an order for ${order.item} with a cost of ${order.price} <br />`;
+		output.innerHTML += `<u>${person}</u> placed an order for <u>${order.item}</u> with a cost of <b>${order.price}</b> <br />`;
 		runningArr.push(price);
 		let priceTotal = findSum(runningArr, runningArr.length);
 		//let lastIndex = priceTotal.slice(-1);
