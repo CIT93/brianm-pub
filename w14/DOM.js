@@ -1,14 +1,6 @@
 'use strict';
 const orderDOM = () => {
-	// const orderDiv = document.querySelector('#order')
-	// const outputDiv = document.querySelector('#output')
-	// const outputTotalDiv = document.querySelector('#total');
 	const orderButton = document.querySelector('#order-button');
-
-	// const lineItem0 = document.querySelector('#product0')
-	// const lineItem1 = document.querySelector('#product1')
-	// const lineItem2 = document.querySelector('#product2')
-
 	orderButton.addEventListener('click', (e) => {
 		const order = new Order();
 		const orderProcess = order.randOrder();
