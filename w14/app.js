@@ -48,15 +48,11 @@ class Order {
 			person: person,
 		};
 		const output = document.getElementById('output');
-		if (productQuant0 === '-') {
-			output.setAttribute('class', 'error');
-			output.textContent =
-				'Please place a minimum order greater or equal to "0" in each section above';
-		} else if (productQuant1 === '-') {
-			output.setAttribute('class', 'error');
-			output.textContent =
-				'Please place a minimum order greater or equal to "0" in each section above';
-		} else if (productQuant2 === '-') {
+		if (
+			productQuant0 === '-' ||
+			productQuant1 === '-' ||
+			productQuant2 === '-'
+		) {
 			output.setAttribute('class', 'error');
 			output.textContent =
 				'Please place a minimum order greater or equal to "0" in each section above';
