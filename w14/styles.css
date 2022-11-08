@@ -1,0 +1,86 @@
+h1,
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: rgb(17, 27, 19);
+	color: green;
+	align-items: center;
+	font-size: 24px;
+	height: 1.25em;
+	vertical-align: 5px;
+	text-align: center;
+	box-shadow: 0.5em 0.75em 1.2em black;
+	text-shadow: 0.15em 0.25em 0.5em black;
+	animation-name: form;
+	animation-duration: 15s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+ 
+}
+body {
+	color:green;
+	background-color: black;
+}
+
+.order {
+	margin-left: 2.5%;
+	margin-right:2.5%;
+	margin-top:2.5%;
+	margin-bottom:25%;
+	border-width: 2px;
+	border-color: green;
+	border-style:solid;
+	flex-flow: row;
+
+}
+.orderOut {
+	margin-left: 2.5%;
+	margin-right:75%;
+	margin-top:2.5%;
+	margin-bottom:2.5%;
+	border-width: 2px;
+	border-color: green;
+	border-style:solid;
+	flex-flow:column;
+	text-align: center;
+}
+.error {
+	background-color: black;
+	color: red;
+}
+form input {
+	color:green;
+	background-color: black;
+}
+.select {
+	color:green;
+	background-color: black;
+}
+form option {
+	color:green;
+	background-color: black;
+}
+form label {
+	color:green;
+	background-color: black;
+}
+button {
+	color:black;
+	background-color: green;
+}
+
+a {
+	color: ivory;
+	text-underline-offset: 0.25em;
+}
+a:hover {
+	color: rose;
+}
+a:active {
+	color: red;
+}
+a:visited {
+	color: grey;
+}
+

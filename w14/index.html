@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <script src='https://d3js.org/d3.v4.min.js' defer></script>
+    <script src="DOM.js" defer></script>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="order" class="order">
+        <label for="product0">Product:</label>
+        <select name="product0" id="product0" class="select">
+            <option value="case">Case</option>
+            <option value="ram">Random Access Memory (RAM)</option>
+            <option value="motherboard">Motherboard</option>
+            <option value="graphics-card">Graphics Card (GPU)</option>
+            <option value="cpu">Core Processor Unit (CPU)</option>
+            <option value="fan-kit">Fan Kit</option>
+            <option value="psu">Power Supply (PSU)</option>
+        </select>
+        <label for="quant">Quantity:</label>
+        <select id="quant0" name="quant0" class="select">
+            <option value="-">---</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <br />
+        <label for="product1">Product:</label>
+        <select name="product1" id="product1" class="select">
+            <option value="case">Case</option>
+            <option value="ram">Random Access Memory (RAM)</option>
+            <option value="motherboard">Motherboard</option>
+            <option value="graphics-card">Graphics Card (GPU)</option>
+            <option value="cpu">Core Processor Unit (CPU)</option>
+            <option value="fan-kit">Fan Kit</option>
+            <option value="psu">Power Supply (PSU)</option>
+        </select>
+        <label for="quant1">Quantity:</label>
+        <select id="quant1" name="quant1" class="select">
+            <option value="-">---</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <br />
+        <label for="product2">Product:</label>
+        <select name="product2" id="product2" class="select">
+            <option value="case">Case</option>
+            <option value="ram">Random Access Memory (RAM)</option>
+            <option value="motherboard">Motherboard</option>
+            <option value="graphics-card">Graphics Card (GPU)</option>
+            <option value="cpu">Core Processor Unit (CPU)</option>
+            <option value="fan-kit">Fan Kit</option>
+            <option value="psu">Power Supply (PSU)</option>
+        </select>
+        <label for="quant2">Quantity:</label>
+        <select id="quant2" name="quant2" class="select">
+            <option value="-">---</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <br />
+
+        <button id="order-button">Order Products</button>
+        <div id="total" class="orderOut">
+            
+        </div>
+        <div id="output" class="orderOut">
+    
+        </div>
+    </div>
+    
+
+</body>
+
+</html>
