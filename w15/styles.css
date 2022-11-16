@@ -8,41 +8,20 @@ h2 {
 	background-color: grey;
 	color: white;
 	text-align: center;
-    margin:-.3em;
-    margin-left:-.6em;
-    margin-right:-.6em;
-    padding:-.3em;
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
-}
-h3 {
-    
-     font-family: 'Arial Black', Gadget, sans-serif;
-    background-color: grey;
-    color: white;
-    text-align: left;
-    box-shadow: 10px 5px 6px rgb(100, 100, 100);
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
-    padding-left:1%;
-    
-}
-.image {
-	background-color: grey;
-	box-shadow: 10px 5px 6px rgb(100, 100, 100);
-}
-.bold {
-	font-family: 'Arial Black', Gadget, sans-serif;
-	font-weight: 900;
-	background-color: grey;
-	color: white;
-	text-align: center;
-	box-shadow: 10px 5px 6px rgb(100, 100, 100);
+	margin: -0.3em;
+	margin-left: -0.6em;
+	margin-right: -0.6em;
+	padding: -0.3em;
 	text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
 }
-
-
-
-.specialText {
-	font-style: italic;
+h3 {
+	font-family: 'Arial Black', Gadget, sans-serif;
+	background-color: grey;
+	color: white;
+	text-align: left;
+	box-shadow: 10px 5px 6px rgb(100, 100, 100);
+	text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
+	padding-left: 1%;
 }
 p {
 	font-family: 'Times New Roman', Times, serif;
@@ -61,16 +40,14 @@ p:first-letter {
 	/* float: left; */
 	line-height: 0.95em;
 }
-
-
 .error {
 	color: red;
 	background-color: #000;
 	text-align: center;
 }
 .done {
-    color:green;
+	color: green;
 }
 .notDone {
-    color:red;
+	color: red;
 }
