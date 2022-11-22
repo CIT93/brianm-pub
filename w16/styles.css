@@ -1,44 +1,51 @@
 body {
-	background-color: ivory;
+	background-color: rgb(92, 92, 76);
 	font-family: 'Arial Black', Gadget, sans-serif;
 }
 h1,
 h2 {
 	font-family: 'Arial Black', Gadget, sans-serif;
-	background-color: grey;
-	color: white;
+	background-color: rgb(46, 46, 46);
+	color: ivory;
 	text-align: center;
 	margin: -0.3em;
 	margin-left: -0.6em;
 	margin-right: -0.6em;
 	padding: -0.3em;
-	text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
+	text-shadow: 2px 2px 3px rgb(20, 20, 20);
 }
 h3 {
 	font-family: 'Arial Black', Gadget, sans-serif;
-	background-color: grey;
+	background-color: rgb(46, 46, 46);
 	color: white;
 	text-align: left;
-	box-shadow: 10px 5px 6px rgb(100, 100, 100);
+	box-shadow: 10px 5px 6px rgb(14, 13, 13);
 	text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
 	padding-left: 1%;
 }
-p {
+h4 {
 	font-family: 'Times New Roman', Times, serif;
 	padding: 0 1em 1em;
+	background-color: rgb(27, 27, 27);
+	box-shadow: 10px 5px 6px rgb(14, 13, 13);
 }
-p:first-line {
+h4:first-line {
 	text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
 	font-weight: bold;
 }
-p:first-letter {
-	color: black;
+h4:first-letter {
 	font-family: 'Times New Roman', Times, serif;
 	font-size: 3em;
-	/* box-shadow: 10px 5px 6px rgb(100, 100, 100); */
 	text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
-	/* float: left; */
 	line-height: 0.95em;
+}
+.btn {
+	color: ivory;
+	background-color: rgb(27, 27, 27);
+	box-shadow: 5px 2px 3px rgb(14, 13, 13);
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+	border-style: solid;
+	border-color: ivory;
 }
 .error {
 	color: red;
@@ -54,21 +61,90 @@ p:first-letter {
 	text-align: center;
 }
 .all {
-	color: black;
-	text-align: left;
+	color: rgb(83, 83, 83);
+	text-align: center;
 }
 .user {
-	color:aqua;
+	color: aqua;
+}
+p {
+	font-family: 'Times New Roman', Times, serif;
+	padding: 0 1em 1em;
+}
+p:first-line {
+	text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+	font-weight: bold;
+}
+p:first-letter {
+	color: black;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 3em;
+	text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+	line-height: 0.95em;
+}
+h4.done:first-line {
+	text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+	font-weight: bold;
+}
+h4.incomplete:first-line {
+	text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+	font-weight: bold;
+}
+h4.done:first-letter {
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 3em;
+	text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+	line-height: 0.95em;
+	color: green;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 3em;
+	text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+	line-height: 0.95em;
+}
+h4.incomplete:first-letter {
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 3em;
+	text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+	line-height: 0.95em;
+	color: red;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 3em;
+	text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+	line-height: 0.95em;
+}
+.invis {
+	display: none;
+}
+.special {
+	font-family: 'Times New Roman', Times, serif;
+	padding: 0 1em 1em;
+	text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+	font-weight: bold;
+	padding-left: 0%;
+	margin-left: 50%;
+	border-style: double;
+}
+
+div {
+	display: flex;
+	flex-flow: row nowrap;
 }
 .main {
 	flex-direction: row;
-	flex-flow: row, nowrap;
+	flex-flow: row nowrap;
 }
 .left {
+	display: block;
 	flex-direction: column;
 	flex-flow: column;
+	margin-right: 50%;
 }
 .right {
 	flex-direction: column;
 	flex-flow: column;
+	padding-left: 0%;
+	margin-left: 50%;
+	/* border-left-color:#000;
+	border-radius: 10%; */
+	border-style: double;
 }
