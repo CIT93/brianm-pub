@@ -47,7 +47,16 @@ p:first-letter {
 }
 .done {
 	color: green;
+	text-align: center;
 }
-.notDone {
+.incomplete {
 	color: red;
+	text-align: center;
+}
+.all {
+	color: black;
+	text-align: left;
+}
+.user {
+	color:aqua;
 }
