@@ -60,3 +60,15 @@ p:first-letter {
 .user {
 	color:aqua;
 }
+.main {
+	flex-direction: row;
+	flex-flow: row, nowrap;
+}
+.left {
+	flex-direction: column;
+	flex-flow: column;
+}
+.right {
+	flex-direction: column;
+	flex-flow: column;
+}

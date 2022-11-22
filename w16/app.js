@@ -98,9 +98,10 @@ const showCompleted = () => {
 	const completed = document.querySelectorAll('div');
 	completed.forEach((todo) => {
 		if (todo.textContent.includes('true')) {
+            todo.style.display = 'block';
 			todo.setAttribute('class', 'done');
 		} else {
-			//todo.style.display = 'none';
+			todo.style.display = 'none';
 		}
 	});
 };
