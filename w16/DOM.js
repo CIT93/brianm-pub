@@ -1,4 +1,5 @@
 'use strict';
+//setup some dynamic DOM elements
 const mainDOM = () => {
 	const mainDiv = document.createElement('div');
 	mainDiv.setAttribute('id', 'maindiv');
